@@ -37,7 +37,6 @@ Execute the following steps to get the pic and vid of your USB drive:
     <li>Under “Hardware” select USB</li>
     <li>Then look the the right side and choose your flash drive</li>
     <li>You should now be able to read the pid and vid from the details section below that window.</li>
-    <li>water</li>
 </ul>
 
 ### How to get the Mac address of your network cards(NIC)?
@@ -53,11 +52,48 @@ We will generate a serial number by going to the link below, choosing our model 
 
 <code>https://xpenogen.github.io/serial_generator/index.html</code>
 
+### B1 Where to download JUN’s boot loader?
+
+<code>https://download.iroot.kr/nas/XPEnology/6.2/Bootloader/</code>
+
+### B2 Where to download compatible Synology DSM image (pat file)?
+
+<code>https://www.synology.com/en-us/support/download</code>
+
+### Creating a Xpenology boot loader drive:
+Then run the following terminal commands:
+<ul>
+    <li>unzip boot loader and place the resulting "synoboot.img" file on my desktop.</li>
+    <li><code>$ cd /Desktop</code> (navigate to desktop in terminal)</li>
+    <li><code>$ sudo diskutil list</code>(get USB drive's label which will look like dev/disk2 with same of different dev number)</li>
+    <li><code>$ sudo diskutil unmountDisk /dev/disk2</code> (unmount the flash drive)</li>
+    <li><code>$ sudo dd if=synoboot.img of=/dev/rdisk2 bs=1m</code> (copy image to flash drive)</li>
+    <li><code>$ sudo diskutil list</code> (get flash drive's label again)</li>
+    <li><code>$ mkdir /tmp/efi</code> (create a mount point on your local system directory)</li>
+    <li><code>$ sudo mount -t msdos /dev/disk2s1 /tmp/efi</code> (mount the USB drive)</li>
+    <li>open the newly mounted flash drive that will show up on the desktop</li>
+    <li>go into the “grub “ folder and open the “grub.cfg” file in a text editor such as (sublime, visual studio code, etc)</li>
+    <li>set the pid, vid, sn, and mac1 (if applicable mac2) values to match your configuration</li>
+    <li>Save the file</li>
+    <li>Eject the USB drive.</li>
+    <li>You are done. Your drive is now ready.</li>
+</ul>
 
 
 
+
+
+
+
+
+
+
+
+    
 
  
+ 
+
 
 
 
