@@ -27,6 +27,28 @@ You will need to collect some information and some files before we can start wit
 </ul>
 
 
+#### How to get the PID and VID of my USB drive on a Mac?
+Execute the following steps to get the pic and vid of your USB drive:
+<ul>
+    <li>Plug in the USB drive.</li>
+    <li>Go to the top left of your screen and click the apple icon.</li>
+    <li>Select “About This Mac”</li>
+    <li>Select “System Report”</li>
+    <li>Under “Hardware” select USB</li>
+    <li>Then look the the right side and choose your flash drive</li>
+    <li>You should now be able to read the pid and vid from the details section below that window.</li>
+    <li>water</li>
+</ul>
+
+
+
+
+
+
+
+ 
+
+
 
 
 
